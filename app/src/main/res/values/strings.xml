@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">GameZone</string>
+
+
+    <string-array name="board_themes">
+        <item>Classic Brown</item>
+        <item>Green &amp; Cream</item>
+        <item>Blue &amp; White</item>
+        <item>Purple &amp; Pink</item>
+        <item>Dark &amp; Light</item>
+    </string-array>
+
+    <string-array name="piece_themes">
+        <item>Classic</item>
+        <item>Modern</item>
+        <item>Wooden</item>
+        <item>Metallic</item>
+        <item>Colorful</item>
+    </string-array>
+</resources>

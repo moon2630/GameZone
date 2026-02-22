@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GameZone"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".fruit_slicer"
+            android:exported="false" />
+        <activity
+            android:name=".chess_setup"
+            android:exported="false" />
+        <activity
+            android:name=".chess_game"
+            android:exported="false" />
+        <activity
+            android:name=".splash_screen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".guess_the_number"
+            android:exported="false" />
+        <activity
+            android:name=".cup_and_ball_game"
+            android:exported="false" />
+        <activity
+            android:name=".rps_game"
+            android:exported="false" />
+        <activity
+            android:name=".word_search"
+            android:exported="false" />
+        <activity
+            android:name=".space_shooter"
+            android:exported="false" />
+        <activity
+            android:name=".maths_game"
+            android:exported="false" />
+        <activity
+            android:name=".matching_card_game"
+            android:exported="false" />
+        <activity
+            android:name=".tic_tac_game"
+            android:exported="false" />
+        <activity
+            android:name=".tic_tac_home"
+            android:exported="false" />
+        <activity
+            android:name=".baloon_game"
+            android:exported="false" />
+        <activity
+            android:name=".flappy_bird"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".car_racing"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.GameZone" />
+        <activity
+            android:name=".snake_game"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

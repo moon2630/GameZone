@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4FC3F7"
+    tools:context=".flappy_bird">
+
+    <!-- Game Area -->
+    <RelativeLayout
+        android:id="@+id/gameArea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/flappy_bird_bg">
+
+        <!-- Score Display -->
+        <TextView
+            android:id="@+id/scoreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/dm_serif_display"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="4"
+            android:shadowRadius="3"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="60sp"
+            android:textStyle="bold" />
+
+        <!-- High Score -->
+        <TextView
+            android:id="@+id/highScoreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scoreText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/caudex"
+            android:padding="3dp"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="4"
+            android:shadowRadius="2"
+            android:text="Best: 0"
+            android:textColor="#FFD700"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Pause Button -->
+        <TextView
+            android:id="@+id/btnPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_action"
+            android:backgroundTint="#FF9800"
+            android:clickable="true"
+            android:drawableStart="@drawable/vector_pause"
+            android:drawableTint="@color/white"
+            android:focusable="true"
+            android:fontFamily="@font/caudex"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="8dp"
+            android:textColor="#FFFFFF" />
+
+        <!-- Bird -->
+        <ImageView
+            android:id="@+id/bird"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/vector_bird_yellow" />
+
+        <!-- Start Menu -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/startMenuLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="24dp"
+            android:visibility="visible"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/caudex"
+                    android:gravity="center"
+                    android:text="FlyBirdie"
+                    android:textColor="#0458DB"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+
+                <!-- Easy Button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnStart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/button_background_medium"
+                    android:fontFamily="@font/artifika"
+                    android:padding="12dp"
+                    android:text="Start"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <!-- Medium Button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnChangeBird"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/button_action_green"
+                    android:fontFamily="@font/artifika"
+                    android:padding="12dp"
+                    android:text="change bird"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+
+                <!-- Game Details -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:fontFamily="@font/caudex"
+                    android:gravity="center"
+                    android:text="HOW TO PLAY"
+                    android:textColor="#424242"
+                    android:textSize="16sp" />
+
+
+                <!-- Game Details -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/caudex"
+                    android:gravity="center"
+                    android:text="• Tap screen to fly\n• Avoid pipes\n• Pass through pipes to score\n• Don't hit the ground!"
+                    android:textColor="#424242"
+                    android:textSize="16sp" />
+
+
+                <!-- Game Details -->
+                <TextView
+                    android:id="@+id/instructionsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/caudex"
+                    android:gravity="center"
+                    android:text="Tap START to begin!"
+                    android:textColor="#E2AC0B"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/birdSelectLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="24dp"
+            android:visibility="gone"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/caudex"
+                    android:gravity="center"
+                    android:text="Select Bird Color"
+                    android:textColor="#682ED0"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnBirdYellow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_background_hint"
+                        android:backgroundTint="#F6DF11"
+                        android:fontFamily="@font/dm_serif_display"
+                        android:text="Yellow"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnBirdGreen"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_background_hint"
+                        android:backgroundTint="#0FDB17"
+                        android:fontFamily="@font/dm_serif_display"
+                        android:text="Green"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnBirdBlue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_background_hint"
+                        android:backgroundTint="#0F8BED"
+                        android:fontFamily="@font/dm_serif_display"
+                        android:text="Blue"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnBirdBrown"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_background_hint"
+                        android:backgroundTint="#CF9643"
+                        android:fontFamily="@font/dm_serif_display"
+                        android:text="Brown"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnBirdRed"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_background_hint"
+                        android:backgroundTint="#EF1C0D"
+                        android:fontFamily="@font/dm_serif_display"
+                        android:text="Red"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/change_bird"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/vector_bird_yellow" />
+
+
+                <!-- Game Details -->
+                <TextView
+                    android:id="@+id/tvDifficultyDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/caudex"
+                    android:gravity="center"
+                    android:text="Tap outside to close"
+
+                    android:textColor="#424242"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/gameOverLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="24dp"
+            android:visibility="gone"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/caudex"
+                    android:gravity="center"
+                    android:text="GAME OVER"
+                    android:textColor="#0A26C4"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/finalScoreText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/dm_serif_display"
+                    android:text="Score: 0"
+                    android:textColor="#160808"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/finalBestText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:fontFamily="@font/dm_serif_display"
+                    android:text="High Score: 0"
+                    android:textColor="#F1A02A"
+                    android:textSize="24sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnRestart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/button_background_medium"
+                    android:fontFamily="@font/artifika"
+                    android:padding="12dp"
+                    android:text="PLAY AGAIN"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/button_background_easy"
+                    android:fontFamily="@font/artifika"
+                    android:padding="12dp"
+                    android:text="MAIN MENU"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

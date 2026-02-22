@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="120">
+
+    <!-- Balloon Body -->
+    <path
+        android:fillColor="#F44336"
+        android:strokeColor="#C62828"
+        android:strokeWidth="2"
+        android:pathData="M50,20 C30,20 15,40 15,65 C15,90 30,110 50,110 C70,110 85,90 85,65 C85,40 70,20 50,20 Z" />
+
+    <!-- Balloon Tip -->
+    <path
+        android:fillColor="#FFCDD2"
+        android:strokeColor="#C62828"
+        android:strokeWidth="1"
+        android:pathData="M50,110 L45,115 L55,115 Z" />
+
+    <!-- String -->
+    <path
+        android:strokeColor="#5D4037"
+        android:strokeWidth="1.5"
+        android:pathData="M50,115 Q55,125 45,135 Q50,145 40,155" />
+
+    <!-- Highlight -->
+    <path
+        android:fillColor="#80FFFFFF"
+        android:pathData="M35,40 C40,35 45,30 50,35 C55,30 60,35 65,40 C60,45 55,50 50,45 C45,50 40,45 35,40 Z" />
+
+</vector>

@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".rps_game">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/modeSelectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="24dp"
+        android:visibility="visible"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:text="RockPaperScissors"
+                android:textColor="#0458DB"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:text="Select Game Mode"
+                android:textColor="#071120"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <!-- Easy Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnVsComputer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background_restart"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="Vs Computer"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <!-- Medium Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnTwoPlayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_background_hint"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="two players"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:text="HOW TO PLAY"
+                android:textColor="#424242"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:text="• Rock beats Scissors\n• Scissors beats Paper\n• Paper beats Rock\n• First to 3 wins the game!"
+                android:textColor="#424242"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/difficultyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="24dp"
+        android:visibility="gone"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/tv_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:text="Select Difficulty"
+                android:textColor="#0B2DE8"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- Easy Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEasy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/button_background_easy"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="Easy"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <!-- Medium Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_background_medium"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="Medium"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <!-- Hard Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnHard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_background_hard"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="Hard"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnBackFromDifficulty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="80dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_background_exit"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="Exit"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <RelativeLayout
+        android:id="@+id/vsComputerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <!-- Game Header -->
+        <RelativeLayout
+            android:id="@+id/layout_toppp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1F329E"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/tvScoreVsComputer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/caudex"
+                android:shadowColor="#E91E63"
+                android:shadowDx="2"
+                android:shadowDy="4"
+                android:shadowRadius="5"
+                android:text="You: 0 | CPU: 0"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDifficultyDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvScoreVsComputer"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:shadowColor="#FFEB3B"
+                android:shadowDx="2"
+                android:shadowDy="4"
+                android:shadowRadius="5"
+                android:text="Difficulty: Easy"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/btnBackVsComputer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/button_background_easy"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/caudex"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:text="MENU"
+                android:textColor="#FFFFFF"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/btnResetVsComputer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnBackVsComputer"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_background_hard"
+
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/caudex"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:text="RESET"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+        <!-- Computer Section -->
+        <LinearLayout
+            android:id="@+id/layout_toppp2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_toppp"
+            android:layout_marginTop="45dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/caudex"
+                android:shadowColor="#E67854"
+                android:shadowDx="2"
+                android:shadowDy="4"
+                android:shadowRadius="5"
+                android:text="COMPUTER"
+                android:textColor="#E91E63"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ivComputerChoice"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/button_background_restart"
+                android:gravity="center"
+                android:textSize="60sp" />
+
+            <TextView
+                android:id="@+id/tvComputerChoiceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/caudex"
+                android:text="Thinking..."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!-- VS Text -->
+        <TextView
+            android:id="@+id/vs_TXT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_toppp2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#0B0809"
+            android:fontFamily="@font/berkshire_swash"
+            android:padding="5dp"
+            android:shadowColor="#5FA3D9"
+            android:shadowDx="2"
+            android:shadowDy="4"
+            android:shadowRadius="5"
+            android:text="VS"
+            android:textAlignment="center"
+            android:textColor="#2196F3"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <!-- Player Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vs_TXT"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/caudex"
+                android:shadowColor="#E67854"
+                android:shadowDx="2"
+                android:shadowDy="4"
+                android:shadowRadius="5"
+                android:text="You"
+                android:textColor="#E91E63"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/ivPlayerChoice"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/button_background_restart"
+                android:gravity="center"
+                android:textSize="60sp" />
+
+
+            <TextView
+                android:id="@+id/tvPlayerChoiceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/caudex"
+                android:text="Thinking..."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!-- Player Choices -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="40dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/btnRock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background_hint"
+                android:clickable="true"
+                android:fontFamily="@font/caudex"
+                android:paddingHorizontal="22dp"
+                android:paddingVertical="20dp"
+                android:text="👊🏻"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp" />
+
+
+            <TextView
+                android:id="@+id/btnPaper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/button_background_hint"
+                android:clickable="true"
+                android:fontFamily="@font/caudex"
+                android:paddingHorizontal="22dp"
+                android:paddingVertical="20dp"
+                android:text="✋🏻"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp" />
+
+
+            <TextView
+                android:id="@+id/btnScissors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background_hint"
+                android:clickable="true"
+                android:fontFamily="@font/caudex"
+                android:paddingHorizontal="22dp"
+                android:paddingVertical="20dp"
+                android:text="✌🏻"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+
+        <!-- Result Display -->
+        <TextView
+            android:id="@+id/tvResultVsComputer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_toppp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/caudex"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/twoPlayerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <!-- Game Header -->
+        <RelativeLayout
+            android:id="@+id/layout_two_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1F329E"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/tvScoreTwoPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/caudex"
+                android:shadowColor="#E91E63"
+                android:shadowDx="2"
+
+                android:shadowDy="4"
+                android:shadowRadius="5"
+                android:text="Player 1: 0 | Player 2: 0"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnBackTwoPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/button_background_easy"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/caudex"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:text="MENU"
+                android:textColor="#FFFFFF"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/btnResetTwoPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnBackTwoPlayer"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_background_hard"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/caudex"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:text="RESET"
+                android:textColor="#FFFFFF" />
+        </RelativeLayout>
+
+        <!-- Horizontal Game Layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/layout_two_player"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <!-- Player 1 Name -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/mate_sc"
+                        android:shadowColor="#E67854"
+                        android:shadowDx="2"
+                        android:shadowDy="4"
+                        android:shadowRadius="5"
+                        android:text="Player 1"
+                        android:textColor="#E91E63"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <!-- Player 1 Choice Display -->
+                    <TextView
+                        android:id="@+id/ivPlayer1Choice"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/button_background_restart"
+                        android:gravity="center"
+                        android:textSize="60sp" />
+
+                    <!-- Player 1 Choice Text -->
+                    <TextView
+                        android:id="@+id/tvPlayer1ChoiceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/caudex"
+                        android:text="Thinking..."
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+
+                    <LinearLayout
+                        android:id="@+id/layout_top30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/btnPlayer1Rock"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/button_background_hint"
+                            android:clickable="true"
+                            android:fontFamily="@font/caudex"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="13dp"
+                            android:text="👊🏻"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/btnPlayer1Paper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/button_background_hint"
+                            android:clickable="true"
+                            android:fontFamily="@font/caudex"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="13dp"
+                            android:text="✋🏻"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/btnPlayer1Scissors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_background_hint"
+                        android:clickable="true"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/caudex"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="13dp"
+                        android:text="✌🏻"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <!-- VS Text -->
+            <TextView
+                android:id="@+id/vs_TXT2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:fontFamily="@font/berkshire_swash"
+                android:shadowColor="#5FA3D9"
+                android:padding="2dp"
+                android:shadowDx="2"
+                android:shadowDy="4"
+                android:shadowRadius="5"
+                android:text="VS"
+                android:layout_marginTop="90dp"
+                android:textColor="#2196F3"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Player 2 Section -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <!-- Player 2 Name -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/mate_sc"
+                        android:shadowColor="#E67854"
+                        android:shadowDx="2"
+                        android:shadowDy="4"
+                        android:shadowRadius="5"
+                        android:text="Player 2"
+                        android:textColor="#E91E63"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <!-- Player 2 Choice Display -->
+                    <TextView
+                        android:id="@+id/ivPlayer2Choice"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/button_background_restart"
+                        android:gravity="center"
+                        android:textSize="60sp" />
+
+                    <!-- Player 2 Choice Text -->
+                    <TextView
+                        android:id="@+id/tvPlayer2ChoiceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/caudex"
+                        android:text="Thinking..."
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <!-- Player 2 Controls -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/btnPlayer2Rock"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/button_background_hint"
+                            android:clickable="true"
+                            android:fontFamily="@font/caudex"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="13dp"
+                            android:text="👊🏻"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/btnPlayer2Paper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/button_background_hint"
+                            android:clickable="true"
+                            android:fontFamily="@font/caudex"
+                            android:paddingHorizontal="15dp"
+                            android:paddingVertical="13dp"
+                            android:text="✋🏻"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp" />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/btnPlayer2Scissors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_background_hint"
+                        android:clickable="true"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/caudex"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="13dp"
+                        android:text="✌🏻"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- Result Display -->
+        <TextView
+            android:id="@+id/tvResultTwoPlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="210dp"
+            android:fontFamily="@font/caudex"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <!-- Reveal Button -->
+        <TextView
+            android:id="@+id/btnRevealTwoPlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/button_background_easy"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/caudex"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="12dp"
+            android:text="REVEAL RESULTS"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gameOverLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="24dp"
+        android:visibility="gone"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvGameOverTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:text="GAME OVER"
+                android:textColor="#0A26C4"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:id="@+id/tvFinalScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/dm_serif_display"
+                android:text="Score: 0"
+                android:textColor="#160808"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tvGameOverMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:text=""
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/mate_sc"
+                android:textColor="#0B2BD7"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnPlayAgain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_background_medium"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="PLAY AGAIN"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMainMenuFromGameOver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_background_easy"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:layout_marginBottom="15dp"
+                android:text="MAIN MENU"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

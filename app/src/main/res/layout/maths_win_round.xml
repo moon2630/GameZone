@@ -1,0 +1,106 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="24dp"
+    app:cardBackgroundColor="@color/white"
+
+    android:visibility="visible"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="8dp">
+
+
+    <LinearLayout
+        android:id="@+id/linear_GameOver_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <!-- Game Over Title -->
+        <TextView
+            android:id="@+id/tv_game_over"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/caudex"
+            android:text="Game Over"
+            android:textColor="#FF9800"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/win_score_TXT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/caudex"
+            android:text="Score : 0"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+
+        <!-- High Score Display -->
+        <TextView
+            android:id="@+id/High_score_game_over_TXT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/caudex"
+            android:text="High Score : 0"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <!-- Suggestion Text -->
+        <TextView
+            android:id="@+id/tv_suggestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/caudex"
+            android:text="Time's up! But you played like a true math champion."
+            android:textAlignment="center"
+            android:textColor="#0C81DF"
+            android:textSize="16sp" />
+
+        <!-- Buttons Layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/win_restart_game_btn"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_background_restart"
+                android:fontFamily="@font/caudex"
+                android:text="RESTART"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/win_leave_game_btn"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_background_hard"
+                android:fontFamily="@font/caudex"
+                android:text="LEAVE"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

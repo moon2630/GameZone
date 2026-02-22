@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/artifika</item>
+        <item>@font/caudex</item>
+
+        <item>@font/brygada_1918</item>
+        <item>@font/castoro</item>
+        <item>@font/dm_serif_display</item>
+        <item>@font/gelasio</item>
+        <item>@font/mate_sc</item>
+    </array>
+</resources>

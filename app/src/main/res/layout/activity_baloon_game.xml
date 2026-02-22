@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#87CEEB"
+    tools:context=".baloon_game">
+
+    <!-- Sky Background -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:scaleType="fitXY"
+        android:src="@drawable/sky_backgrounddd" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layoutDifficulty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="24dp"
+        android:visibility="visible"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tv_game_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:text="BalloonBlast"
+                android:textColor="#0458DB"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/tv_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:text="Choose Your Difficulty Level"
+                android:textColor="#424242"
+                android:textSize="16sp" />
+
+            <!-- Easy Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEasy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background_easy"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="Easy"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <!-- Medium Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_background_medium"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="Medium"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <!-- Hard Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnHard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_background_hard"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="Hard"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <!-- Game Details -->
+            <TextView
+                android:id="@+id/tvDifficultyDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#424242"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Game UI (Initially hidden) -->
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/caudex"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        android:text="Score: 0"
+        android:paddingHorizontal="5dp"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvHighScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvScore"
+        android:layout_centerHorizontal="true"
+        android:paddingHorizontal="5dp"
+
+        android:fontFamily="@font/caudex"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+
+        android:shadowDy="1"
+        android:shadowRadius="3"
+        android:text="High Score: 0"
+        android:textColor="#FFEB3B"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+
+    <!-- Time Remaining -->
+    <TextView
+        android:id="@+id/tvTime"
+        android:paddingHorizontal="5dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvHighScore"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/caudex"
+        android:shadowColor="#D2C5C5"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"
+        android:text="Time: 60"
+        android:textColor="#F82313"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <!-- Game Status -->
+    <TextView
+        android:id="@+id/tvGameStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/mate_sc"
+        android:shadowColor="#F6A4A4"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="5"
+        android:text="Game Over"
+        android:textColor="#EF417C"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+
+    <!-- Level Display -->
+    <TextView
+        android:id="@+id/tvLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/caudex"
+        android:shadowColor="#C7DDC8"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:paddingHorizontal="5dp"
+
+        android:shadowRadius="3"
+        android:text="Level: Easy"
+        android:textColor="#0E8E14"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvBalloonsPopped"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="5dp"
+
+        android:layout_below="@id/tvLevel"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:drawableStart="@drawable/vector_balloon"
+        android:fontFamily="@font/caudex"
+        android:shadowColor="#C2BCBC"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:text="x0"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <!-- Balloon Container View -->
+    <com.example.gamezone.BalloonGameView
+        android:id="@+id/balloonView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btnStart"
+        android:layout_below="@id/tvHighScore"
+        android:visibility="gone" />
+
+
+    <!-- Game Controls -->
+    <TextView
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_action"
+        android:backgroundTint="#0D31FA"
+        android:fontFamily="@font/caudex"
+        android:paddingHorizontal="35dp"
+        android:paddingVertical="8dp"
+        android:text="START"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/btnPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_toLeftOf="@id/btnStart"
+        android:background="@drawable/button_action"
+        android:backgroundTint="#FF9800"
+        android:drawableStart="@drawable/vector_pause"
+        android:drawableTint="@color/white"
+        android:fontFamily="@font/caudex"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="8dp"
+        android:textColor="#FFFFFF"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_toRightOf="@id/btnStart"
+        android:background="@drawable/button_action"
+        android:backgroundTint="#F44336"
+        android:drawableStart="@drawable/vector_reset"
+        android:drawableTint="@color/white"
+        android:fontFamily="@font/caudex"
+        android:paddingHorizontal="25dp"
+        android:paddingVertical="8dp"
+        android:visibility="gone" />
+
+
+    <!-- Back to Difficulty Selection -->
+    <TextView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/vector_back"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

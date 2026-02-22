@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background color -->
+    <item>
+        <color android:color="#34495E"/>
+    </item>
+
+    <!-- Road edges (left and right sides) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#2C3E50"/>
+            <size android:width="40dp"/>
+        </shape>
+    </item>
+
+    <item android:right="40dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#2C3E50"/>
+            <size android:width="40dp"/>
+        </shape>
+    </item>
+
+    <!-- Road center line (dashed) -->
+    <item android:gravity="center">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/>
+            <size android:width="4dp" android:height="20dp"/>
+        </shape>
+    </item>
+
+    <!-- Additional dashed lines (optional) -->
+    <item android:gravity="center" android:top="60dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/>
+            <size android:width="4dp" android:height="20dp"/>
+        </shape>
+    </item>
+
+    <item android:gravity="center" android:top="120dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/>
+            <size android:width="4dp" android:height="20dp"/>
+        </shape>
+    </item>
+
+</layer-list>

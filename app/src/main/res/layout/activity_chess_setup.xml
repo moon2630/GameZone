@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chess_bg1"
+    android:padding="20dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layoutDifficulty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="#835D0909"
+        android:visibility="visible"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:background="#1B000000"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tv_game_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:text="ChessX"
+                android:shadowColor="#CCDEE0"
+                android:shadowDx="2"
+                android:shadowDy="4"
+                android:shadowRadius="5"
+                android:textColor="#FFEB3B"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:text="Select Game Mode"
+                android:textColor="#03A9F4"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnTwoPlayers"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background_medium"
+                    android:fontFamily="@font/caudex"
+                    android:text="Two Players"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnComputer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background_restart"
+                    android:fontFamily="@font/caudex"
+                    android:text="Vs Computer"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/twoPlayerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <!-- Player 1 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:fontFamily="@font/caudex"
+                    android:text="Player 1 (White)"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/player1Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:background="@drawable/input_background_blue"
+                    android:fontFamily="@font/caudex"
+                    android:hint="Enter name"
+                    android:padding="14dp"
+                    android:text="Player 1"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <!-- Player 2 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:fontFamily="@font/caudex"
+                    android:text="Player 2 (Black)"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/player2Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/input_background_blue"
+                    android:fontFamily="@font/caudex"
+                    android:hint="Enter name"
+                    android:padding="14dp"
+
+                    android:text="Player 2"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/computerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- Player 1 vs Computer -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/caudex"
+                    android:text="Player 1 (White) vs Computer (Black)"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+
+                <EditText
+                    android:id="@+id/player1Computer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/input_background_blue"
+                    android:fontFamily="@font/caudex"
+                    android:hint="Enter your name"
+
+                    android:padding="15dp"
+                    android:text="Player 1"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <!-- Difficulty Selection -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/caudex"
+                    android:text="Select Computer Difficulty"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <RadioGroup
+                    android:id="@+id/difficultyGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radioEasy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/caudex"
+                        android:text="Easy"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+
+                        android:theme="@style/MyRadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/radioMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/caudex"
+                        android:text="Medium"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:theme="@style/MyRadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/radioHard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/caudex"
+                        android:text="Hard"
+
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:theme="@style/MyRadioButton" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnStartGame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_background_exit"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="Start Chess Game"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

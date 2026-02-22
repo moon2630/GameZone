@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000033"
+    tools:context=".space_shooter">
+
+    <!-- Game View -->
+    <com.example.gamezone.SpaceShooterView
+        android:id="@+id/spaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- HUD Overlay -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#40000000"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/caudex"
+            android:text="Score: 0"
+            android:shadowColor="#E4D870"
+            android:shadowDx="2"
+            android:shadowDy="4"
+            android:shadowRadius="5"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvLives"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/caudex"
+            android:gravity="center"
+            android:text="❤❤❤"
+            android:textColor="#FF4444"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <!-- Pause Button -->
+        <TextView
+            android:id="@+id/btnPauseResume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_action_green"
+            android:clickable="true"
+            android:drawableStart="@drawable/vector_pause"
+            android:drawableTint="@color/white"
+            android:focusable="true"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/caudex"
+            android:layout_marginStart="17dp"
+            android:paddingHorizontal="13dp"
+            android:paddingVertical="7dp"
+            />
+
+        <TextView
+            android:id="@+id/tvLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+android:layout_below="@id/btnPauseResume"
+            android:fontFamily="@font/caudex"
+            android:gravity="right"
+            android:text="Level: 1"
+            android:textColor="#44FF44"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Controls -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#40000000"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+
+        <TextView
+            android:id="@+id/btnLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_action"
+            android:fontFamily="@font/caudex"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="12dp"
+            android:text="◀"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/btnShoot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/button_background_restart"
+            android:fontFamily="@font/caudex"
+            android:layout_gravity="center_horizontal"
+            android:drawableStart="@drawable/vector_fire"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="13dp"
+    />
+
+
+        <TextView
+            android:id="@+id/btnRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_action"
+            android:fontFamily="@font/caudex"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="12dp"
+            android:text="▶"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+
+    </LinearLayout>
+
+    <!-- Power-up Indicator -->
+    <LinearLayout
+        android:id="@+id/powerupLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:background="#80000000"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvPowerup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/caudex"
+            android:text="⚡ POWER SHOT"
+            android:textColor="#FFFF00"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Game Status -->
+    <TextView
+        android:id="@+id/tvGameStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/caudex"
+        android:text="TAP TO START"
+        android:textColor="#03A9F4"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/startMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="24dp"
+        android:visibility="visible"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:text="SpaceBlast"
+                android:textColor="#0458DB"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+
+            <!-- Easy Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnStartGame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/button_background_easy"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="Start game"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <!-- Medium Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDifficulty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_background_medium"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="DIFFICULTY: NORMAL"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+
+            <!-- Game Details -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:text="HOW TO PLAY"
+                android:textColor="#424242"
+                android:textSize="16sp" />
+
+
+            <!-- Game Details -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:textColor="#424242"
+
+                android:text="• Use LEFT/RIGHT to move\n• Tap FIRE to shoot\n• Avoid enemies &amp; asteroids\n• Collect power-ups\n• Survive as long as possible!"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gameOverMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="24dp"
+        android:visibility="gone"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/caudex"
+                android:gravity="center"
+                android:text="GAME OVER"
+                android:textColor="#0A26C4"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tvFinalScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/dm_serif_display"
+                android:text="Score: 0"
+                android:textColor="#160808"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tvHighScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/caudex"
+                android:text="High score : 0"
+                android:textColor="#FF9800"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnPlayAgain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_background_medium"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="PLAY AGAIN"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMainMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/button_background_easy"
+                android:fontFamily="@font/artifika"
+                android:padding="12dp"
+                android:text="MAIN MENU"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
